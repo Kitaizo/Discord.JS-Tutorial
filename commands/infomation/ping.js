@@ -11,6 +11,8 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTitle(`${client.user.username} Ping !`)
             .setDescription(`Ping is: ${client.ws.ping} ms!\nMessage Ping is: ${Math.floor(msg.createdAt - message.createdAt)} ms!`)
+            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setTimestamp();
         
         await message.channel.send(embed);
         msg.delete();
